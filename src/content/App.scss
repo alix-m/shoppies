@@ -1,0 +1,86 @@
+body {
+    width: 100%;
+    font-family: 'Myriad Pro';
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+} 
+
+.body-content {
+    max-width: 1600px;
+    margin: auto;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.background-green {
+    background-color: #004c3f;
+    color: white;
+}
+
+.green {
+    color: #004c3f;
+}
+
+.background-offwhite {
+    background-color: #fbf7ed;
+}
+
+.main-header {
+    max-width: 1600px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 80px;
+    box-sizing: border-box;
+}
+
+.section {
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+
+.heading-1 {
+    font-size: 3.75em;
+    font-weight: 700;
+}
+
+.heading-2 {
+    font-size: 3.125em;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 28px;
+}
+
+.padding-r {
+    padding-left: calc(5%);
+    padding-right: calc(5%);
+}
+
+.padding {
+    padding: 1rem 0.9375rem 1rem 0.9375rem;
+}

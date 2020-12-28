@@ -1,0 +1,98 @@
+
+  label {
+    position: absolute;
+    z-index: 10;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0.5;
+    margin-top: 2px;
+  }
+
+  button {
+    display: inline-block;
+    margin-left: 8px;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+    border: none;
+    font-weight: 600;
+    background-color: #008060;
+    color: white;
+    min-width: 160px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #004c3f;
+    }
+
+    &:active {
+      padding: 0px;
+      background-color: darken(#004c3f, 4%);
+      -webkit-box-shadow: 0 0 0 3px rgba(21,122,118,0.5);
+      box-shadow: 0 0 0 3px rgba(21,122,118,0.5);
+    }
+  }
+
+.form-group {
+  display: flex;
+}
+
+.input-wrapper {
+  position: relative;
+  display: block;
+}
+
+  .ease-in {
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -ms-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+  }
+
+  .group {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  
+  input {
+    margin-right: 8px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px #6b7177;
+    border-radius: 4px;
+    display: inline-block;
+    z-index: 9;
+    white-space: nowrap;
+    margin-right: 8px;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      outline: 0;
+      -webkit-box-shadow: 0 0 0 1px #6b7177, 0 0 0 3px rgba(21,122,118,0.5);
+      box-shadow: 0 0 0 1px #6b7177, 0 0 0 3px rgba(21,122,118,0.5);
+    }
+
+    &:focus, &:not(:placeholder-shown){
+      padding-top: 1.5rem;
+      padding-bottom: 0.5rem;
+      &+label
+      {
+        transform: translateY(-10px);
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .input-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  .icon {
+    padding-bottom: 4px;
+    position: absolute;
+  }
