@@ -12,16 +12,13 @@ class TextInput extends React.Component {
   }
 
   async onClick(e) {
-      //try {
-        console.log(e)
-        //const res  = await fetch('/api/movies', { headers: {'Access-Control-Allow-Origin': '*'} })
-        //const movies = await res.json()
-        //console.log(movies)
-        //this.setState({ data: movies })
-      //  console.log(this.state.data)
-     // } catch(err){
-    //    console.log('error!\n', err)
-    //  }
+    try {
+      const res = await fetch('/api/movies', { headers: { 'Access-Control-Allow-Origin': '*' } })
+      const movies = await res.json()
+      this.setState({ data: movies })
+    } catch (err) {
+      console.log('error!\n', err)
+    }
   }
 
   render() {
@@ -36,7 +33,7 @@ class TextInput extends React.Component {
               className='text-input padding ease-in'
               placeholder={this.props.placeholder} />
             <label for={this.props.id} id={'label-' + this.props.id} className="label ease-in">{this.props.placeholder}</label>
-            <button className="ease-in" onClick={ this.onClick }>Search</button>
+            <button className="ease-in" onClick={this.onClick}>Search</button>
             <div>
             </div>
           </div>
