@@ -14,18 +14,23 @@ function App() {
         </div>
       </header>
       <div className="body-content">
+
         <section className="section grid-2-col background-offwhite padding-r">
-          <h1 className="heading-1 green">
-            Anyone, anywhere, can start a list
-        </h1>
+          <div className="">
+            <h1 className="heading-1 green">
+              Anyone, anywhere, can start a list
+            </h1>
+            <h3 className="heading-3">Get started on your Shoppies list by searching for a movie.</h3>
+          </div>
         <div/>
         <TextInput id="search" type="text" placeholder="Enter movie title"/>
         </section>
+
         <section className="section background-green padding-r">
           <h2 className="heading-2">
             Bring your list online
           </h2>
-          Create an ecommerce website backed by powerful tools that help you find customers, drive sales, and manage your day-to-day.
+          <h3 className="heading-3">Share your picks for the Shoppies.</h3>
       </section>
         <section>
         </section>

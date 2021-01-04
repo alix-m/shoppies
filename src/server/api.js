@@ -1,10 +1,22 @@
+const { response } = require('express')
+const express = require('express')
+const router = express.Router()
 const fetch = require('node-fetch')
-const url = `http://www.omdbapi.com/?t=mr+deeds&apikey=c194e47e`
+const url = `http://www.omdbapi.com/${ query }&apikey=c194e47e`
 
-async function getData(){
-  fetch(url)
-    .then(res => res.json())
-    .then(data => console.log(data))
-};
 
-exports.getData = getData;
+router.get('/**', async(req, res) => {
+    try {
+      console.log('server ok')
+      const response = await fetch(url)
+      console.log('res ok')
+      const data = await response.json()
+      console.log('movies ok\n', data)
+      res.send(data)
+    } catch(err){
+      console.log('WEE WOO WEE WOO\n', err)
+    }
+
+})
+
+module.exports = router;

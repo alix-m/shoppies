@@ -3,11 +3,26 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
   },
+  devServer: { 
+    contentBase: path.resolve(__dirname, 'dist'),
+    hot: true,
+    publicPath: '/',
+    proxy: {
+      '/api/**': {
+        target: 'http://localhost:5000/',
+        pathRewrite: { '^/api': '' },
+        secure: false,
+        changeOrigin: true
+      }
+    }
+ },
   module: {
     rules: [
       {
@@ -42,9 +57,5 @@ module.exports = {
       filename: 'index.html'
     }),
     new webpack.HotModuleReplacementPlugin()
-  ],
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  }
+  ]
 }

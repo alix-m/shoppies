@@ -1,10 +1,21 @@
-const express = require('express');
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
+const router = require('./api')
 
-const get = require('./api')
+const proxy = require('http-proxy')
+const api = proxy.createProxyServer()
 
-const app = express();
-app.use(express.static('dist'));
+var port = 5000 || provess.env.port
 
-app.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 8080}!`));
+app.use(express.static('dist'))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(router)
 
-get.getData()
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.listen(port, () => console.log(`Listening on port ${ port }`))
