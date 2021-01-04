@@ -2,7 +2,8 @@ const { response } = require('express')
 const express = require('express')
 const router = express.Router()
 const fetch = require('node-fetch')
-const url = `http://www.omdbapi.com/${ query }&apikey=c194e47e`
+const url = 'http://www.omdbapi.com/'
+const apikey = '&apikey=c194e47e'
 
 
 router.get('/**', async(req, res) => {

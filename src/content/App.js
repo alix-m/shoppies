@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.scss'
 
+import SearchBar from '../components/SearchBar'
 import TextInput from '../components/TextInput'
 
 function App() {
@@ -22,8 +23,18 @@ function App() {
             </h1>
             <h3 className="heading-3">Get started on your Shoppies list by searching for a movie.</h3>
           </div>
-        <div/>
-        <TextInput id="search" type="text" placeholder="Enter movie title"/>
+          <div />
+          <div className="search">
+          <SearchBar>
+            <TextInput id="search" type="text" placeholder="Movie title*" />
+            <TextInput id="search" type="text" placeholder="Year of release*" />
+            <button className="ease-in">Search</button>
+          </SearchBar>
+          <SearchBar>
+            <TextInput id="search" type="text" placeholder="IMDB id*" />
+            <button className="ease-in">Add to list</button>
+          </SearchBar>
+          </div>
         </section>
 
         <section className="section background-green padding-r">
@@ -31,7 +42,7 @@ function App() {
             Bring your list online
           </h2>
           <h3 className="heading-3">Share your picks for the Shoppies.</h3>
-      </section>
+        </section>
         <section>
         </section>
       </div>

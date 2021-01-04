@@ -56,6 +56,11 @@ header {
     box-sizing: border-box;
 }
 
+.search {
+    display: grid;
+    row-gap: 16px;;
+}
+
 .section {
     padding-top: 6em;
     padding-bottom: 6em;
