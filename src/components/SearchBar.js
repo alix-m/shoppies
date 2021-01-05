@@ -1,28 +1,25 @@
 import './SearchBar.scss'
+import submit from './Search'
 
 import React from "react"
-
 
 class SearchBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.onClick = this.onClick.bind(this)
-        this.state = { value: '' };
+        this.state = { value: '', results: '' }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    async onClick(e) {
-        try {
-            const res = await fetch('/api/movies', { headers: { 'Access-Control-Allow-Origin': '*' } })
-            const movies = await res.json()
-        } catch (err) {
-            console.log('error!\n', err)
-        }
+    handleSubmit = async e => {
+        e.preventDefault()
+        let movies = await submit(e.target[0].value)
+        this.props.onResults(movies)
     }
 
     render() {
         return (
-            <form>
+            <form onSubmit={ this.handleSubmit }>
                 { this.props.children }
             </form>
         )

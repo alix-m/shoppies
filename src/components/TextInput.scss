@@ -1,5 +1,5 @@
   .input-group {
-    display: flex;
+
     position: relative;
   }
 
@@ -9,7 +9,7 @@
     font-weight: 500;
     font-size: 20px;
     opacity: 0.5;
-    top: 1.5rem;
+    top: 1.2rem;
     left: 1rem;
   }
 
@@ -28,7 +28,6 @@
 
   
   input {
-    margin-right: 8px;
     border: 1px solid transparent;
     box-shadow: 0 0 0 1px #6b7177;
     border-radius: 4px;

@@ -1,11 +1,10 @@
 import React from 'react'
 import './App.scss'
 
-import SearchBar from '../components/SearchBar'
-import TextInput from '../components/TextInput'
+
+import Search from './Search'
 
 function App() {
-
 
   return (
     <div className='App'>
@@ -21,27 +20,13 @@ function App() {
             <h1 className="heading-1 green">
               Anyone, anywhere, can start a list
             </h1>
-            <h3 className="heading-3">Get started on your Shoppies list by searching for a movie.</h3>
-          </div>
-          <div />
-          <div className="search">
-          <SearchBar>
-            <TextInput id="search" type="text" placeholder="Movie title*" />
-            <TextInput id="search" type="text" placeholder="Year of release*" />
-            <button className="ease-in">Search</button>
-          </SearchBar>
-          <SearchBar>
-            <TextInput id="search" type="text" placeholder="IMDB id*" />
-            <button className="ease-in">Add to list</button>
-          </SearchBar>
+            <Search/>
           </div>
         </section>
-
         <section className="section background-green padding-r">
           <h2 className="heading-2">
             Bring your list online
           </h2>
-          <h3 className="heading-3">Share your picks for the Shoppies.</h3>
         </section>
         <section>
         </section>

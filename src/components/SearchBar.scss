@@ -1,6 +1,6 @@
 button {
     display: inline-block;
-    margin-left: 8px;
+    margin-left: 24px;
     border-radius: 4px;
     box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
     border: none;
@@ -8,7 +8,7 @@ button {
     background-color: #008060;
     color: white;
     min-width: 160px;
-    min-height: 64px;
+    min-height: 56px;
     cursor: pointer;
 
     &:hover {
@@ -24,7 +24,6 @@ button {
   }
 
   form {
-      display: grid;
-      grid-template-columns: auto auto auto;
-      column-gap: 8px;
+      display: flex;
+      align-items: center;
   }
