@@ -10,16 +10,15 @@ class TextInput extends React.Component {
 
   render() {
     return (
-
-      <div className="input-group" id="name">
+      <div className="input-group">
         <input
-          id={this.props.id}
+          name={ this.props.name }
           type={this.props.type}
-          className='text-input padding ease-in'
+          className={ 'text-input ease-in input-padding  ' + this.props.className }
+          maxLength={ this.props.maxlength }
           placeholder={this.props.placeholder} />
         <label for={this.props.id} id={'label-' + this.props.id} className="label ease-in">{this.props.placeholder}</label>
       </div>
-
     )
   }
 }

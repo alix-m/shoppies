@@ -1,0 +1,74 @@
+  .input-group {
+    position: relative;
+  }
+
+  label {
+    position: absolute;
+    font-weight: 500;
+    font-size: 20px;
+    opacity: 0.5;
+    top: 1em;
+    left: 1em;
+    color: transparent;
+    z-index: -1;
+  }
+
+  .ease-in {
+    -webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -ms-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+
+  .input-padding {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 0.6em;
+  }
+  
+  input {
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 1px #6b7177;
+    border-radius: 4px;
+    z-index: 9;
+    white-space: nowrap;
+    font-size: 18px;
+    line-height: 1.5;
+    width: 240px;
+
+    &::placeholder {
+      font-size: 1rem;
+      z-index: -1;
+    }
+
+    &:focus {
+      outline: 0;
+      -webkit-box-shadow: 0 0 0 1px #6b7177, 0 0 0 3px rgba(21,122,118,0.8);
+      box-shadow: 0 0 0 1px #6b7177, 0 0 0 3px rgba(21,122,118,0.8);
+      z-index: 1;
+    }
+
+    &:focus, &:not(:placeholder-shown){
+      padding-top: 0.8em;
+      padding-bottom: 0.2em;
+      &+label
+      {
+        transform: translateY(-0.5rem);
+        font-size: 12px;
+        color: black;
+        z-index: 1;
+      }
+      &::placeholder{
+        color: transparent;
+        z-index: -1;
+      }
+    }
+  }
+
+  .disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}

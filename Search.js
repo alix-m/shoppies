@@ -12,7 +12,6 @@ class Search extends React.Component {
                 res.json();
             })
             .then(data => {
-                console.log(data)
             })
     }
 
