@@ -1,25 +1,33 @@
 import './SearchResults.scss'
-import React from "react"
+import React, { useContext, memo } from "react"
 import Movie from '../Movie/Movie'
+import { SearchContext } from '../../context/SearchProvider'
 
-export const SearchResults = props => {
+const SearchResults = () => {
 
-  const getResults = () => {
-    var results = props.results
-    var elements = []
-    for(let i in results){
-      elements.push(<Movie movie={ results[i] }/>)
-    }
-    return elements;
-  }
+  const context = useContext(SearchContext)
+  const { state } = context;
 
-    return (
-        <section className="section search-results">
-          <h2 className="padding-r">Showing results for [ query ]</h2>
-          <div className="grid padding-r">{ getResults() }</div>
-        </section>
-    )
+  const msg = state.search.query
+            ? (state.search.query != '' 
+            ? `Showing results for "${ state.search.query }"`
+            : 'No results found')
+            : ''
+
+  return (
+    <section className="section search-results">
+      <h2 className="">
+        { msg }
+      </h2>
+      <div className="grid">
+        { state.search.results &&
+          state.search.results.map(r => {
+          return <Movie movie={r} />
+        })
+      }
+      </div>
+    </section>
+  )
 }
 
 export default SearchResults;
-

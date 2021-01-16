@@ -6,6 +6,7 @@ export const submit = async query => {
     }
 
     const fetchData = async query => {
+
         const url = getUrl(query)
         const res = await fetch(url)
     
@@ -29,4 +30,7 @@ export const submit = async query => {
     }
 }
 
-export default submit
+
+export const validate = input => {
+    return((/\S/.test(input)))
+}

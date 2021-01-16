@@ -1,6 +1,8 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const { SourceMapDevToolPlugin } = require("webpack");
+
 
 module.exports = {
   entry: [
@@ -25,6 +27,11 @@ module.exports = {
  },
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader'],
+      },
       {
         loader: 'babel-loader',
         test: /\.js$/,
@@ -64,6 +71,9 @@ module.exports = {
       template: path.resolve(__dirname, 'index.html'),
       filename: 'index.html'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new SourceMapDevToolPlugin({
+      filename: "[file].map"
+    })
   ]
 }

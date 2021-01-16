@@ -1,66 +1,39 @@
-import React, { useState } from "react"
+import React, { useContext, useEffect } from "react"
 
 import SearchBar from '../components/SearchBar/SearchBar'
 import TextInput from '../components/TextInput/TextInput'
 import SearchResults from '../components/SearchResults/SearchResults'
-import ProgressBar from '../components/ProgressBar'
+import Modal from '../components/Modal/Modal'
 
-class SearchPage extends React.Component {
+import { SearchContext } from '../context/SearchProvider'
 
-    constructor(props) {
-        super(props)
-        this.handleResults = this.handleResults.bind(this)
-        this.handleLoading = this.handleLoading.bind(this)
-        this.state = { results: null, loader: null }
-    }
+export const SearchPage = () => {
 
-    componentDidMount(){
-        let value = this.context;
-    }
+    const context = useContext(SearchContext)
+    const { state } = context
 
-    handleResults = e => {
-        let results = e ? <SearchResults results={e} /> : <div>nup</div>
-        this.setState({ results: results })
-    }
+    var visible = false
 
-    handleLoading = e => {
-        var loader
-        if (e) {
-            loader = <ProgressBar />
-        }
-        this.setState({ loader: loader })
-    }
+    useEffect(() => {
+        if(state.active.movie) visible = 'visible'
+    })
 
-    render() {
-        return (
-            <div className="search">
-                <p className="padding-r">Get started on your Shoppies list by searching for a movie.</p>
-                <div className="search-bar">
-                    <SearchBar id='search-title-year' onLoading={this.handleLoading} onResults={this.handleResults} >
-                        <TextInput name="title" type="text" placeholder="Movie title*" />
-                        <p className="minor-text bold margins">and / or</p>
-                        <TextInput name="year" type="text" maxlength="4" placeholder="Year of release" />
-                        <button type="submit" className="padding ease-in cursor">Search</button>
-                    </SearchBar>
-                </div>
-                { this.state.loader }
-                { this.state.results }
+    return (
+        <div className="search">
+            <p>Get started on your Shoppies list by searching for a movie.</p>
+            <div className="search-bar">
+                <SearchBar id='search-title-year'>
+                    <TextInput name="title" type="text" placeholder="Movie title*" />
+                    <button type="submit" className="ease-in cursor">Search</button>
+                </SearchBar>
             </div>
-        )
-    }
+            <SearchResults/>
+            <div className="modal-container">
+                { state.active.movie && <Modal movie={ state.active.movie } visibility={ visible }/> }
+            </div>
+        </div>
+    )
+
 }
 
 export default SearchPage
-
-
-
-
-
-let save = `
-<div className="search-group">
-    <p className="text">Or enter the IMDB id of a movie to add it directly to your list.</p>
-    <SearchBar id="search-id">
-        <TextInput id="search-id" type="text" placeholder="IMDB id*" />
-        <button type="submit" className="padding ease-in">Add to list</button>
-    </SearchBar>
-</div>`

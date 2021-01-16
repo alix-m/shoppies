@@ -2,34 +2,31 @@ import React from 'react'
 import './App.scss'
 
 import SearchPage from './SearchPage'
+import star from '../img/star-filled.svg'
 
 function App() {
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <div className="main-header background-offwhite">
-          <div className="page-title"><span className="emoji">🏆</span><span className="italic">         the shoppies</span></div>
-        </div>
-      </header>
-      <div className="body-content">
-        <section className="section grid-col-2 background-green">
-          <div className="">
-            <h1 className="heading-1 padding-r">
-              Anyone, anywhere, can start a list
-            </h1>
-            <div className="margin">
-              <SearchPage />
-            </div>
+      <div className="App">
+        <header className='App-header'>
+          <div className="main-header">
+            <img src={star} className="toggle"></img>
+            <div className="page-title offwhite">the shoppies</div>
           </div>
-        </section>
-        <section className="section background-green padding-r">
-          <h2 className="heading-2 padding-r">
-
-          </h2>
-        </section>
+        </header>
+        <div className="padding">
+          <div className="body-content background-green">
+            <section className="section">
+              <div className="">
+                <h1 className="heading-1">
+                  Anyone, anywhere,<br />can start a list
+            </h1>
+                <SearchPage />
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
-    </div>
   );
 }
 

@@ -1,20 +1,21 @@
 button {
     display: inline-block;
-    margin-top: 24px;
     border-radius: 4px;
     box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
     border: none;
-    font-weight: 600;
+    font-size: 18px;
     background-color: #008060;
     color: white;
     width: 160px;
+    height: 56px;
+    margin-left: 24px;
 
     &:hover {
-      background-color: #004c3f;
+      background-color: #003229;
     }
 
     &:active {
-      background-color: darken(#004c3f, 4%);
+      background-color: darken(#003229, 2%);
       -webkit-box-shadow: 0 0 0 3px rgba(21,122,118,0.5);
       box-shadow: 0 0 0 3px rgba(21,122,118,0.5);
     }

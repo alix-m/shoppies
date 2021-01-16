@@ -1,44 +1,30 @@
+import React, { useContext } from "react"
 import './SearchBar.scss'
-import submit, { validate } from '../../utils/Search'
 
-import React from "react"
+import { submit } from '../../utils/Search'
+import { SearchContext }  from '../../context/SearchProvider'
 
-class SearchBar extends React.Component {
+const SearchBar = (props) => {
 
-    constructor(props) {
-        super(props);
-        this.state = { value: '', results: '' }
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+    const { dispatch } = useContext(SearchContext)
 
-    handleSubmit = async e => {
+    const handleSubmit = async e => {
         e.preventDefault()
-        e.persist()
-        let loading = true;
-        let data = []
+        
+        let query = e.target[0].value
+        let results = await submit(query)
 
-        while(loading){
-            console.log(e)
-            this.props.onLoading(true)
-            data = await submit(e.target[0].value)
-            loading = false
-        }
-        this.props.onLoading(false)
-        this.props.onResults(data)
+        dispatch({
+            type: 'SET_RESULTS', 
+            payload: { query, results }
+        })
     }
 
-    componentDidMount = async () => {
-        let data = await submit('Mr Deeds')
-        this.props.onResults(data)
-    }
-
-    render() {
-        return (
-            <form className="padding-r" id={ this.props.id } onSubmit={ this.handleSubmit }>
-                { this.props.children }
-            </form>
-        )
-    }
+    return (
+        <form id={ props.id } className="search-bar flex-row" onSubmit={ handleSubmit }>
+            { props.children }
+        </form>)
 }
 
-export default SearchBar;
+
+export default SearchBar

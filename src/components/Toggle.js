@@ -7,11 +7,10 @@ export const Toggle = props => {
 
     const handleClick = () => {
         setToggle(!toggled)
-        props.onToggle(toggled)
     }
     
-    return( 
-        <img src={ toggled ? filled : outline } className='toggle cursor ease-in' onClick={ handleClick }></img>
+    return(
+        <img id="toggle" src={ toggled ? filled : outline } className='toggle cursor ease-in' onClick={ handleClick }></img>
     )
 }
 
