@@ -1,6 +1,6 @@
 import React from "react"
 
-export const MovieSection = props => {
+export const Subheading = props => {
 
     return(
     <div className="movie-section">
@@ -10,4 +10,4 @@ export const MovieSection = props => {
     )
 }
 
-export default MovieSection
+export default Subheading

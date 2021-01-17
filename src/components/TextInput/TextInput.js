@@ -15,7 +15,7 @@ const TextInput = props => {
         required
       />
       <label 
-        for={ props.id } 
+        htmlFor={ props.id } 
         id={ 'label-' + props.id } 
         className="label ease-in">
         { props.placeholder }

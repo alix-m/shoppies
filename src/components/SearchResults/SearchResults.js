@@ -1,30 +1,25 @@
 import './SearchResults.scss'
-import React, { useContext, memo } from "react"
-import Movie from '../Movie/Movie'
-import { SearchContext } from '../../context/SearchProvider'
+import React, { useContext, useState, useEffect } from "react"
+import { AppContext } from '../../context/AppProvider'
+import { Movie } from '../Movie'
 
-const SearchResults = () => {
+export const SearchResults = () => {
 
-  const context = useContext(SearchContext)
-  const { state } = context;
-
-  const msg = state.search.query
-            ? (state.search.query != '' 
-            ? `Showing results for "${ state.search.query }"`
-            : 'No results found')
-            : ''
+  const { state, getNominations } = useContext(AppContext)
 
   return (
     <section className="section search-results">
+      <div className="">
+      { getNominations() }
+      </div>
       <h2 className="">
-        { msg }
       </h2>
       <div className="grid">
         { state.search.results &&
-          state.search.results.map(r => {
-          return <Movie movie={r} />
-        })
-      }
+          state.search.results.map(result => {
+            return <Movie key={ result.imdbID } movie= { result } />
+          })
+        }
       </div>
     </section>
   )

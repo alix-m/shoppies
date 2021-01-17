@@ -1,24 +1,27 @@
 import React from "react"
-import MovieSection from '../Movie/MovieSection'
+import Subheading from  './Subheading'
 
 import './Modal.scss'
+export const Modal = ({ object, visibility }) => {
 
-export const Modal = ({ visible, movie }) => {
+    const subheadings = []
+    let fuckthisshit =      `<div className="modal-container">
+    { state && state.active.movie && <Modal object={ state.active.movie } visbility={ isVisible }/> }
+    </div>`
 
-    let subheadings =  ['Genre', 'Director', 'Rated', 'Plot'];
-
-    const getContent = () => {
-        let elements = []
-        subheadings.forEach(sh => {
-             elements.push(<div>hi <MovieSection subheading={ sh } info={ movie[sh] }/></div>)
-        })
-        return elements
-    }
+    blarg =
+        ` { state.search.results &&
+      state.search.results.map(r => {
+      return <Movie movie={r} />
+    })`
+    
 
     return (
         <div className="">
-        <div className="modal" style={{ visbility: visible ? 'visible' : 'hidden' }}>
-            { movie && getContent() }
+        <div className="modal ease-in shadow" style={{ visbility: visibility ? 'visible' : 'hidden' }}>
+            { object && subheadings.map(s => {
+                <Subheading subheading={ s } info={ object[s] }/>
+            }) }
         </div>
         </div>
     )
