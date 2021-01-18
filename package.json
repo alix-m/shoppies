@@ -9,7 +9,7 @@
     "client": "webpack-dev-server --mode development --hot",
     "dev": "yarn run client",
     "build": "webpack --mode=production",
-    "start": "node server.js"
+    "start": "node src/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
