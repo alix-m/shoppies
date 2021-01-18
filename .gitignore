@@ -1,0 +1,14 @@
+#dependencies
+node_modules
+yarn.lock
+
+#production build
+dist
+
+#logs
+yarn-error.log
+
+#ide
+.vs/
+.vscode/
+.DS_Store
