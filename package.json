@@ -11,9 +11,13 @@
     "build": "webpack --mode=production"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.1",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "fetch": "^1.1.0",
     "file-loader": "^6.2.0",
     "node-fetch": "^2.6.1",
+    "postcss": "^8.2.4",
+    "postcss-loader": "^4.1.0",
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "react-scripts": "4.0.0",
@@ -36,7 +40,7 @@
     "sass-loader": "^9.0.2",
     "source-map-loader": "^2.0.0",
     "style-loader": "^1.2.1",
-    "webpack": "^5.0.0-rc.6",
+    "webpack": "^4.45.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }

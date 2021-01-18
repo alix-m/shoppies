@@ -1,3 +1,4 @@
+import './Toggle.scss'
 import React, { useState, useContext, useEffect } from 'react'
 import { AppContext, DispatchContext } from '../../context/AppProvider'
 
@@ -16,18 +17,16 @@ export const Toggle = ({ imdbID }) => {
     })
 
     const handleClick = () => {
-
         if(isToggled){
             removeNomination(imdbID)
         } else if(!isToggled){
             addNomination(imdbID)
-            console.log(status)
         }
         setToggle(!isToggled)
     }
 
     return(
-        <img id="toggle" onClick={ handleClick } src={ isToggled ? filled : outline } className='toggle cursor ease-in'></img>
+        <img id="toggle" onClick={ handleClick } src={ isToggled ? filled : outline } className='toggle pointer ease'></img>
     )
 }
 

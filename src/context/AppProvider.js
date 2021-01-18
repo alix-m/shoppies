@@ -1,7 +1,7 @@
-import React, { createContext, createReducer, useReducer, useCallback } from 'react'
+import React, { createContext, useReducer } from 'react'
 import { AppReducer } from './AppReducer'
 
-const initialState = { search: [], active: [], nominations: [] }
+const initialState = { search: [], active: [], nominations: [], ref: [] }
 
 export const AppContext = createContext(initialState)
 export const DispatchContext = createContext()
@@ -11,6 +11,7 @@ export const AppProvider = ({ children }) => {
     const [ state, dispatch ] = useReducer(AppReducer, initialState)
 
     const setResults = (query, results) => {
+        state.search = []
         dispatch({
             type: 'SET_RESULTS', 
             payload: { query, results }
@@ -25,9 +26,10 @@ export const AppProvider = ({ children }) => {
     }
 
     const addNomination = imdbID => {
-        if(state.nominations.length == 3) return alert('can only nominate 5!')
+        if(state.nominations.length == 5){
+            return alert('can only nominate 5!')}
         dispatch({
-            type: 'ADD', 
+            type: 'ADD_NOMINEE', 
             payload: { imdbID }
         })
     }
@@ -40,11 +42,14 @@ export const AppProvider = ({ children }) => {
     }
 
     const clearNominations = () => {
-
+        dispatch({
+            type: 'REMOVE', 
+            payload: { imdbID }
+        })
     }
 
     const isNominated = imdbID => {
-        return state.nominations.includes(imdbID)
+        return state.nominations.find(n => n.imdbID == imdbID)
     }
 
     const getNominations = () => {
@@ -52,13 +57,12 @@ export const AppProvider = ({ children }) => {
     }
 
     return (
-        <DispatchContext.Provider value={{ addNomination, removeNomination }}>
+        <DispatchContext.Provider value={{ addNomination, removeNomination, clearNominations }}>
             <AppContext.Provider value={{ 
                 state,
                 nominations: state.nominations, 
                 setResults, 
                 setActive, 
-                clearNominations,
                 getNominations,
                 isNominated }}>
                 { children } 

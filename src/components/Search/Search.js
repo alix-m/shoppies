@@ -1,5 +1,6 @@
-import React, { useContext } from "react"
 import './Search.scss'
+
+import React, { useContext } from "react"
 import { TextInput } from '../TextInput'
 
 import { search } from '../../utils/ApiRequest'
@@ -21,7 +22,7 @@ const Search = props => {
     return (
         <form id={props.id} className="search-bar flex-row" onSubmit={ handleSearch }>
             <TextInput name="title" type="text" placeholder="Movie title*" />
-            <button type="submit" className="ease-in cursor">Search</button>
+            <button type="submit" className="ease pointer">Search</button>
         </form>
         )
 }

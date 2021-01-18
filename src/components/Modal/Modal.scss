@@ -1,0 +1,58 @@
+
+.modal-container {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.modal-container {
+    background: inherit;
+    z-index: 100;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px; 
+    z-index: 0;
+    position: absolute; 
+}
+
+.content-modal {
+    width: 100%;
+    z-index: 9999;
+    position: absolute;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-blur {
+    height: 60%;
+    width: 40%;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+
+.blurry {
+    width: 100%;
+
+    background: inherit;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: '';
+    transform: scale(1.4);
+    content: '';
+    background: inherit;
+    box-shadow: inset 0 0 0 600px rgba(0, 0 ,0 ,0.8);
+    filter: blur(8px);
+    -webkit-filter: blur(12px);
+    -moz-filter: blur(12px);
+    -o-filter: blur(12px);
+    -ms-filter: blur(12px);
+    overflow: hidden;
+}

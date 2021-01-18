@@ -1,0 +1,28 @@
+
+.toggle {
+    width: 32px;
+    align-self: flex-start;
+    filter: invert(82%) sepia(98%) saturate(1322%) hue-rotate(327deg) brightness(101%) contrast(106%);
+    padding: 0;
+}
+
+.movie .toggle {
+    z-index: 10;
+    margin: 9px;
+    z-index: 110;
+    position: absolute;
+    right: 0;
+    margin: 15px;
+    &:hover{
+        transform: scale(125%);
+        -webkit-transform:scale(1.25);
+    }
+}
+
+.toggle-bg {
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    position: absolute;
+    margin: 4px;
+}

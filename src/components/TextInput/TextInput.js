@@ -8,7 +8,7 @@ const TextInput = props => {
       <input
         name={ props.name }
         type={ props.type }
-        className={ 'text-input ease-in' }
+        className={ 'text-input ease' }
         maxLength={ props.maxlength }
         placeholder={ 'placeholder' }
         pattern="(.|\s)*\S(.|\s)*"
@@ -17,7 +17,7 @@ const TextInput = props => {
       <label 
         htmlFor={ props.id } 
         id={ 'label-' + props.id } 
-        className="label ease-in">
+        className="label ease">
         { props.placeholder }
       </label>
     </div>
@@ -25,4 +25,3 @@ const TextInput = props => {
 }
 
 export default TextInput;
-

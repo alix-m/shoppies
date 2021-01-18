@@ -10,14 +10,20 @@ export const AppReducer = (state, action) => {
       return { ...state, active: action.payload.active }
 
     case 'ADD':
+      //let nominee = state.search.results.find(n => n.imdbID == action.payload.imdbID)
       return { ...state, 
-                  nominations: [ ...state.nominations, action.payload.imdbID ], status: 'success' }
+                  nominations: [ ...state.nominations, action.payload.imdbID ] }
+
+    case 'ADD_NOMINEE':
+      let nominee = state.search.results.find(n => n.imdbID == action.payload.imdbID)
+      return { ...state, 
+        nominations: [ ...state.nominations, nominee ] }
 
     case 'REMOVE':
       return {
         ...state,
         nominations: state.nominations.filter(n => {
-          return n !== action.payload.imdbID})
+          return n.imdbID !== action.payload.imdbID})
       }   
 
     case 'SAVED':
@@ -25,12 +31,10 @@ export const AppReducer = (state, action) => {
 
     case 'CLEAR_MOVIES':
       return { ...state,
-               transactions: [action.payload, ...state.transactions]
+               nominations: [ ]
     }
 
     default:
       return state;
   }
 }
-
-const initialState = { search: [], active: [], nominations: [] }
