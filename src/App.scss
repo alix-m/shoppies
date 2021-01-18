@@ -1,0 +1,52 @@
+@import 'global-scss/mixins';
+@import 'global-scss/variables';
+@import 'global-scss/global';
+@import 'global-scss/grid';
+@import 'global-scss/layout';
+@import 'global-scss/type';
+@import 'global-scss/transitions';
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $body-bg;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+} 
+
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    min-height: 80px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    width: $max-width;
+}
+
+.content {
+    max-width: $max-width;
+    margin: auto;
+    margin-top: 5em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.nominations {
+    height: 100%;
+}
+
+.test {
+    border: 1px dashed red;
+}

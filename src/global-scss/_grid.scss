@@ -1,0 +1,57 @@
+@media screen and (max-width: 640px) {
+    .grid {
+        grid-template-columns: 250px;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .grid {
+        grid-template-columns: repeat(2, 250px);
+    }
+    .flex-row {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 250px);
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .grid {
+        grid-template-columns: repeat(4, 250px);
+        }
+}
+
+
+$breakpoints: (
+  'xs': 480,
+  'sm':  767px,
+  'md': 992px,
+  'lg':  1200px,
+  'xl': 1201px
+) !default;
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+}
+
+.grid {
+
+    max-width: fit-content;
+    margin-top: 1em;
+    display: grid;
+    column-gap: 32px;
+    row-gap: 32px;
+    margin-right: 1em;
+
+    @include respond-to('xl'){
+        grid-template-columns: repeat(5, 250px);
+    }
+}

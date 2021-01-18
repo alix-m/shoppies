@@ -1,0 +1,50 @@
+.reset  { 
+    margin: 0;
+    padding: 0;
+}
+
+.shadow {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07), 
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07),
+                0 16px 32px rgba(0,0,0,0.07), 
+                0 32px 64px rgba(0,0,0,0.07);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.padding-lr-5 {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.margin-16 {
+    margin: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.reset {
+    padding: 0;
+    margin: 0;
+}
+
+.bg-img {
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}
+
+.margin-top {
+    margin-top: 5em;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}

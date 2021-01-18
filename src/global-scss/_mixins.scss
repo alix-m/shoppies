@@ -1,0 +1,13 @@
+$baseline: 16px;
+
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($baseline)}rem;
+}
+
+@function em($pixel, $context: $base-font-size) {
+    @return #{$pixel / $context}em;
+  }

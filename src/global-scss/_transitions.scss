@@ -1,0 +1,7 @@
+.ease {
+    -webkit-transition: all $ts $te;
+    -moz-transition: all $ts $te;
+    -ms-transition: all $ts $te;
+    -o-transition: all $ts $te;
+    transition: all $ts $te;
+}
