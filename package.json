@@ -9,17 +9,17 @@
     "client": "webpack-dev-server --mode development --hot",
     "dev": "yarn run client",
     "build": "webpack --mode=production",
-    "start": "node src/server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
     "fetch": "^1.1.0",
     "react": "17.0.0",
     "react-dom": "17.0.0",
-    "react-scripts": "4.0.0",
-    "react-transition-group": "^4.4.1"
+    "react-scripts": "4.0.0"
   },
   "devDependencies": {
+    "react-transition-group": "^4.4.1",
     "autoprefixer": "^10.2.1",
     "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "file-loader": "^6.2.0",
