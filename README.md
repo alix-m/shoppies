@@ -1,6 +1,6 @@
 #   🎉 The Shoppies 
 
-**Live preview**: [theshoppies.alixm.ca](theshoppies.alixm.ca)
+**Live preview**: [theshoppies.alixm.ca](http://theshoppies.alixm.ca)
 
 
 ## Tech Stack
