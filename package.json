@@ -8,22 +8,24 @@
   "scripts": {
     "client": "webpack-dev-server --mode development --hot",
     "dev": "yarn run client",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "start": "node server.js"
   },
   "dependencies": {
-    "autoprefixer": "^10.2.1",
-    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
+    "express": "^4.17.1",
     "fetch": "^1.1.0",
-    "file-loader": "^6.2.0",
-    "node-fetch": "^2.6.1",
-    "postcss": "^8.2.4",
-    "postcss-loader": "^4.1.0",
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "react-scripts": "4.0.0",
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.2.1",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
+    "file-loader": "^6.2.0",
+    "node-fetch": "^2.6.1",
+    "postcss": "^8.2.4",
+    "postcss-loader": "^4.1.0",
     "@babel/core": "7.9.0",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "7.9.0",
