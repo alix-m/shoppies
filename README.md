@@ -2,6 +2,7 @@
 
 **Live preview**: [theshoppies.alixm.ca](http://theshoppies.alixm.ca)
 
+![enter image description here](https://i.ibb.co/3hQxWHP/Screenshot-from-2021-01-18-01-19-37.png)
 
 ## Tech Stack
 |Technology | Usage     |
