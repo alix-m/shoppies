@@ -1,10 +1,4 @@
-@import 'global-scss/mixins';
-@import 'global-scss/variables';
-@import 'global-scss/global';
-@import 'global-scss/grid';
-@import 'global-scss/layout';
-@import 'global-scss/type';
-@import 'global-scss/transitions';
+@import 'global-scss/main.scss';
 
 body {
     width: 100%;
@@ -20,9 +14,12 @@ html {
 
 header {
     top: 0;
+} 
+
+.banner {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-} 
+}
 
 .main-header {
     display: flex;
@@ -32,7 +29,6 @@ header {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
-    width: $max-width;
 }
 
 .content {
@@ -43,10 +39,11 @@ header {
     margin-right: 1em;
 }
 
-.nominations {
-    height: 100%;
-}
-
 .test {
     border: 1px dashed red;
+}
+
+.search-results .movie:hover{
+        transform: scale(104%);
+        -webkit-transform:scale(1.04);
 }

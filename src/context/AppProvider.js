@@ -1,6 +1,8 @@
 import React, { createContext, useReducer } from 'react'
 import { AppReducer } from './AppReducer'
 
+import test from '../components/Modal/test'
+
 const initialState = { search: [], active: [], nominations: [], ref: [] }
 
 export const AppContext = createContext(initialState)

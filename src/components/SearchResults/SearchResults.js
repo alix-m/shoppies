@@ -18,9 +18,7 @@ export const SearchResults = () => {
 
   return (
     <section className="margin-top search-results">
-      <p>
-    { getMessage() }
-      </p>
+      <p>{ getMessage() }</p>
       <div className="grid">
         {state.search.results &&
          state.search.results.length > 0 &&

@@ -23,7 +23,7 @@ export const Movie = props => {
                 <div className="margin-16">
                     <h4 className="bold">{ props.movie.Year }</h4>
                     <h3 className="line-clamp lines-2">{ props.movie.Title }</h3>
-                    <h4 className="line-clamp lines-1">{ props.movie.Genre }</h4>
+                    <h5 className="line-clamp lines-1">{ props.movie.Genre }</h5>
                 </div>
             </div>
         </div>

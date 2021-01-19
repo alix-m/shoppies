@@ -25,7 +25,6 @@
         }
 }
 
-
 $breakpoints: (
   'xs': 480,
   'sm':  767px,
@@ -45,7 +44,6 @@ $breakpoints: (
 .grid {
 
     max-width: fit-content;
-    margin-top: 1em;
     display: grid;
     column-gap: 32px;
     row-gap: 32px;
