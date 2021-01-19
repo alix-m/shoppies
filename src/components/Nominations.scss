@@ -1,0 +1,33 @@
+.nominations-container {
+    position: absolute;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    justify-content: center;
+    z-index: 999;
+    position: fixed;
+
+    &.nominations-container:hover {
+        height: 500px;
+    }
+}
+
+.nominations {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nominations > .movie {
+    transform: scale(80%);
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.nominations-container:hover .movie {
+        visibility: visible;
+}
+
+.center-text {
+    text-align: center;
+}

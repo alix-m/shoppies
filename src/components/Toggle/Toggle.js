@@ -26,7 +26,7 @@ export const Toggle = ({ imdbID }) => {
     }
 
     return(
-        <img id="toggle" onClick={ handleClick } src={ isToggled ? filled : outline } className='toggle pointer ease'></img>
+        <img id="toggle" onClick={ handleClick } src={ isToggled ? filled : outline } className='toggle pointer ease svg-yellow'></img>
     )
 }
 

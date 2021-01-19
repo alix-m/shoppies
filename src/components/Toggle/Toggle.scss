@@ -2,8 +2,15 @@
 .toggle {
     width: 32px;
     align-self: flex-start;
-    filter: invert(82%) sepia(98%) saturate(1322%) hue-rotate(327deg) brightness(101%) contrast(106%);
     padding: 0;
+}
+
+.svg-yellow{
+    filter: invert(82%) sepia(98%) saturate(1322%) hue-rotate(327deg) brightness(101%) contrast(106%);
+}
+
+.svg-white {
+    filter: brightness(0) invert(1);
 }
 
 .movie .toggle {

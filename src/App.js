@@ -22,23 +22,19 @@ useEffect(()=>{
   return (
       <div className="App">
         <header className='App-header'>
-          <div className="main-header">
-            <img src={star} className="toggle"></img>
-            <h5>the shoppies</h5>
+          <div className="main-header banner padding-lr-5">
+            <img src={star} className="toggle margin-r-16 svg-yellow"></img>
+            <h3>the shoppies</h3>
           </div>
         </header>
-        <div className="padding-lr-5">
-          <div className="content">
-            <section>
-              <div className="col-2">
+        <div className="">
+            <section className="padding-lr-5">
                 <h1>
                   Anyone, anywhere,<br />can start a list
                 </h1>
-                <Nominations/>
-                </div>
                 <SearchPage />
             </section>
-          </div>
+            <Nominations/>
         </div>
       </div>
   );

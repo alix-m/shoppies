@@ -36,11 +36,6 @@
     @extend .blur;
 }
 
-.movie:hover {
-    transform: scale(104%);
-    -webkit-transform:scale(1.04);
-}
-
 .toggle-container {
     position: absolute;
     right: 0;
